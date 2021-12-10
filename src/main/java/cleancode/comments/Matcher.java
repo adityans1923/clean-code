@@ -6,9 +6,11 @@ public class Matcher {
   public boolean match(int[] expected, int[] actual,
                        int clipLimit, int delta) {
 // Clip "too-large" values
-    clipTooLargeValues(actual, clipLimit);
+    for (int i1 = 0; i1 < actual.length; i1++)
+      if (actual[i1] > clipLimit)
+        actual[i1] = clipLimit;
 // Check for length differences
-    if (isLengthEqual(expected, actual))
+    if (actual.length != expected.length)
       return false;
 // Check that each entry is within expected +/- delta
     for (int i = 0; i < actual.length; i++)
@@ -17,13 +19,4 @@ public class Matcher {
     return true;
   }
 
-  private boolean isLengthEqual(int[] expected, int[] actual) {
-    return actual.length != expected.length;
-  }
-
-  private void clipTooLargeValues(int[] actual, int clipLimit) {
-    for (int i = 0; i < actual.length; i++)
-      if (actual[i] > clipLimit)
-        actual[i] = clipLimit;
-  }
 }
