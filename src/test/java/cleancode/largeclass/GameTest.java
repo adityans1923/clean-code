@@ -10,8 +10,8 @@ import static org.junit.Assert.*;
 
 public class GameTest {
 
-  @Test
-  public void gameTest() {
+  @Test public void
+  gameTest() {
     Queue<Integer> rollsSequence = new LinkedList<>(Arrays.asList(
         6, 9, 2, 4, 7, 0, 5, 1, 0, 2, 8, 4, 2, 3, 8, 1, 2, 5, 1, 7, 8, 4, 5, 7, 8, 1, 3, 1, 9, 2, 9, 6, 2, 2, 1, 0, 2, 6, 1, 2, 8, 9, 7, 1, 3, 5, 2, 5, 1, 3
     ));

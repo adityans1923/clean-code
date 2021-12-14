@@ -1,15 +1,15 @@
 package cleancode.comments;
 
-import cleancode.comments.Matcher;
-import junit.framework.TestCase;
 
-public class MatcherTest extends TestCase {
+import org.junit.Test;
 
-  public MatcherTest(String name) {
-    super(name);
-  }
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-  public void testMatch() {
+public class MatcherTest {
+
+  @Test public void
+  testMatch() {
     Matcher matcher = new Matcher();
     int[] expected = new int[]{10, 50, 30, 98};
     int clipLimit = 100;

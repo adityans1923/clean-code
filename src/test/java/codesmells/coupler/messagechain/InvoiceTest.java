@@ -9,20 +9,20 @@ public class InvoiceTest {
 
   Invoice invoice;
 
-  @Before
-  public void setUpInvoiceWithShippingCosts() {
+  @Before public void
+  setUpInvoiceWithShippingCosts() {
     invoice = new Invoice(new Customer(new Address(new Country("South Africa", "Africa"))));
   }
 
-  @Test
-  public void ShouldReturnRegularPriceOfOneItemWithShippingCost() {
+  @Test public void
+  ShouldReturnRegularPriceOfOneItemWithShippingCost() {
     InvoiceItem item = new InvoiceItem(100);
     invoice.addItem(item);
     assertEquals(110, invoice.getTotalPrice(), 0.1);
   }
 
-  @Test
-  public void ShouldReturnRegularPriceOfTwoItem() {
+  @Test public void
+  ShouldReturnRegularPriceOfTwoItem() {
     InvoiceItem item = new InvoiceItem(100);
     invoice.addItem(item);
     invoice.addItem(item);
