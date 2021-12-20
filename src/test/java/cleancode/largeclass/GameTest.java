@@ -26,10 +26,12 @@ public class GameTest {
     boolean notAWinner;
     var aGame = new Game();
 
+    // Setting up players
     aGame.add("Chet");
     aGame.add("Pat");
     aGame.add("Sue");
 
+    // Running the game
     do {
       aGame.roll(rollsSequence.remove());
 
